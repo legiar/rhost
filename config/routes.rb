@@ -1,5 +1,10 @@
 Rhost::Application.routes.draw do
+  resource :user, :controller => "users"
   resources :users
+  resource :user_session
+
+  get "dashboard/index"
+  root :to => "dashboard#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

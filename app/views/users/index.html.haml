@@ -1,0 +1,51 @@
+
+%table#product-table(border="0" width="100%" cellpadding="0" cellspacing="0")
+  %tr
+    %th.table-header-check= link_to "", "#", :id => "toggle-all"
+    %th.table-header-repeat.line-left.minwidth-1= link_to "login", "#"
+    <th class="table-header-repeat line-left minwidth-1"><a href="">First Name</a></th>
+    <th class="table-header-repeat line-left"><a href="">Email</a></th>
+    <th class="table-header-repeat line-left"><a href="">Due</a></th>
+    <th class="table-header-repeat line-left"><a href="">Website</a></th>
+    %th.table-header-repeat.line-left 
+    <th class="table-header-options line-left"><a href="">Options</a></th>
+
+  - @users.each do |user|
+    %tr
+      %td <input type="checkbox"/>
+      %td= user.login
+      %td= user.email
+      %td= user.login_count
+      %td= user.last_request_at
+      %td= user.last_login_at
+      %td= user.current_login_at
+      %td= user.last_login_ip
+      %td= user.current_login_ip
+      %td.options-width
+        = link_to 'Show', user, :class => "icon-1 info-tooltip"
+        = link_to 'Edit', edit_user_path(user), :class => "icon-4 info-tooltip"
+        = link_to 'Destroy', user, :confirm => 'Are you sure?', :method => :delete, :class => "icon-2 info-tooltip"
+
+#actions-box
+  = link_to "", "#", :class => "action-slider"
+  #actions-box-slider
+    = link_to "Edit", "#", :class => "action-edit"
+    = link_to "Delete", "#", :class => "action-delete"
+  .clear
+			
+%table#paging-table(border="0" cellpadding="0" cellspacing="0")
+  %tr
+    %td
+      <a href="" class="page-far-left"></a>
+      <a href="" class="page-left"></a>
+      <div id="page-info">Page <strong>1</strong> / 15</div>
+      <a href="" class="page-right"></a>
+      <a href="" class="page-far-right"></a>
+    %td
+      <select  class="styledselect_pages">
+      <option value="">Number of rows</option>
+      <option value="">1</option>
+      <option value="">2</option>
+      <option value="">3</option>
+      </select>
+.clear      

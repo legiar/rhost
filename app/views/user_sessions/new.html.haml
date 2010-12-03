@@ -1,0 +1,39 @@
+#loginbox
+  #login-inner
+    = form_for @user_session, :url => user_session_path do |f|
+      %table(border="0" cellpadding="0" cellspacing="0")
+        - if @user_session.errors.any?
+          %tr
+            %th
+            %td Wrong username or password.
+        %tr
+          %th Username
+          %td= f.text_field :login, :class => "login-inp"
+        %tr
+          %th Password
+          %td= f.password_field :password, :class => "login-inp", :onfocus => "this.value=''"
+        %tr
+          %th
+          %td(valign="top")
+            = f.check_box :remember_me, :class => "checkbox-size"
+            = f.label :remember_me
+        %tr
+          %th
+          %td= f.submit "Login", :class => "submit-login"
+  .clear
+  = link_to "Forgot Password?", "#", :class => "forgot-pwd"
+    
+#forgotbox
+  #forgotbox-text Please send us your email and we'll reset your password.
+  #forgot-inner
+    %table(border="0" cellpadding="0" cellspacing="0")
+      %tr
+        %th Email address:
+        %td
+          <input type="text" value=""   class="login-inp" />
+      %tr
+        %th
+        %td
+          <input type="button" class="submit-login"  />
+  .clear
+  = link_to "Back to login", "#", :class => "back-login"
