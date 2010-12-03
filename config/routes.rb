@@ -1,4 +1,4 @@
-Rhost::Application.routes.draw do
+RHost::Application.routes.draw do
   resource :user, :controller => "users"
   resources :users
   resource :user_session
