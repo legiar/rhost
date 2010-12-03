@@ -1,7 +1,11 @@
 RHost::Application.routes.draw do
-  resource :user, :controller => "users"
+  devise_for :users,
+    :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' } do
+    get "/login" => "devise/sessions#new"
+    get "/logout" => "devise/sessions#destroy"
+  end
+
   resources :users
-  resource :user_session
 
   get "dashboard/index"
   root :to => "dashboard#index"

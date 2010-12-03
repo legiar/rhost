@@ -2,26 +2,20 @@ class CreateUsers < ActiveRecord::Migration
   def self.up
     create_table :users do |t|
       t.string :login, :null => false
-      t.string :email, :default => "", :null => false
-      t.string :crypted_password, :null => false
-      t.string :password_salt, :null => false
-      t.string :persistence_token, :null => false
-      t.string :perishable_token, :string, :default => "", :null => false
-      t.integer :login_count, :default => 0, :null => false
-      t.datetime :last_request_at
-      t.datetime :last_login_at
-      t.datetime :current_login_at
-      t.string :last_login_ip
-      t.string :current_login_ip
+      t.database_authenticatable :null => false
+      t.recoverable
+      t.rememberable
+      t.trackable
+      t.confirmable
+      t.lockable :lock_strategy => :failed_attempts, :unlock_strategy => :both
+      t.token_authenticatable
       t.timestamps
-      t.datetime :deleted_at
     end
 
-    add_index :users, :login
-    add_index :users, :email
-    add_index :users, :persistence_token
-    add_index :users, :perishable_token
-    add_index :users, :last_request_at
+    add_index :users, :email,                :unique => true
+    add_index :users, :reset_password_token, :unique => true
+    add_index :users, :confirmation_token,   :unique => true
+    add_index :users, :unlock_token,         :unique => true
   end
 
   def self.down
