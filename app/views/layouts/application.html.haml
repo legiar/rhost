@@ -1,89 +1,89 @@
 !!! XML
 !!! Strict
-<html xmlns="http://www.w3.org/1999/xhtml">
+%html(xmlns="http://www.w3.org/1999/xhtml")
 
-%head
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <title>Rhost</title>
-  = stylesheet_link_tag 'screen'
-  = javascript_include_tag :defaults
-  = csrf_meta_tag
+  %head
+    %meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+    %link(rel="icon" href="./favicon.ico" type="image/x-icon")
+    %link(rel="shortcut icon" href="./favicon.ico" type="image/x-icon")
+    %title Rhost
+    = stylesheet_link_tag 'screen'
+    = javascript_include_tag :defaults
+    = csrf_meta_tag
 
-%body
-  #page-top-outer
-    #page-top
-      #logo
-        <a href=""><img src="images/shared/logo.png" width="156" height="40" alt="" /></a>
-    
-      #top-search
-        = render "shared/search"
-        .clear
-
-    .clear &nbsp;
-   
-    .nav-outer-repeat
-      .nav-outer
-        #nav-right
-          .nav-divider &nbsp;
-          .showhide-account= image_tag "shared/nav/nav_myaccount.gif", :size => "93x14", :alt => ""
-          .nav-divider &nbsp;
-          = link_to image_tag("shared/nav/nav_logout.gif", :size => "64x14", :alt => ""), logout_path, :id => "logout"
-          .clear &nbsp;
+  %body
+    #page-top-outer
+      #page-top
+        #logo
+          <a href=""><img src="/images/shared/logo.png" width="156" height="40" alt="" /></a>
       
-          .account-content
-            .account-drop-inner
-              <a href="" id="acc-settings">Settings</a>
-              <div class="clear">&nbsp;</div>
-              <div class="acc-line">&nbsp;</div>
-              <a href="" id="acc-details">Personal details </a>
-              <div class="clear">&nbsp;</div>
-              <div class="acc-line">&nbsp;</div>
-              <a href="" id="acc-project">Project details</a>
-              <div class="clear">&nbsp;</div>
-              <div class="acc-line">&nbsp;</div>
-              <a href="" id="acc-inbox">Inbox</a>
-              <div class="clear">&nbsp;</div>
-              <div class="acc-line">&nbsp;</div>
-              <a href="" id="acc-stats">Statistics</a> 
-          
-        .nav
-          = render "shared/menu"
-        .clear
-    <div class="clear">
-   
-  #content-outer
-    #content
-      #page-heading
-        %h1 Add product
-      
-      %table#content-table(border="0" width="100%" cellpadding="0" cellspacing="0")
-        %tr
-          %th.sized(rowspan="3")= image_tag "shared/side_shadowleft.jpg", :size => "20x300", :alt => ""
-          %th.topleft
-          %td#tbl-border-top &nbsp;
-          %th.topright
-          %th.sized(rowspan="3")= image_tag "shared/side_shadowright.jpg", :size => "20x300", :alt => ""
-        %tr
-          %td#tbl-border-left
-          %td
-            #content-table-inner
-              #table-content
-                = render "shared/notice"
-                = yield
-              .clear
-          %td#tbl-border-right
-        %tr
-          %th.sized.bottomleft
-          %td#tbl-border-bottom &nbsp;
-          %th.sized.bottomright
+        #top-search
+          =# render "shared/search"
+          .clear
+
+      .clear &nbsp;
+     
+      .nav-outer-repeat
+        .nav-outer
+          #nav-right
+            .nav-divider &nbsp;
+            .showhide-account= image_tag("shared/nav/nav_myaccount.gif", :size => "93x14", :alt => "")
+            .nav-divider &nbsp;
+            = link_to image_tag("shared/nav/nav_logout.gif", :size => "64x14", :alt => ""), logout_path, :id => "logout"
+            .clear &nbsp;
+        
+            .account-content
+              .account-drop-inner
+                <a href="" id="acc-settings">Settings</a>
+                <div class="clear">&nbsp;</div>
+                <div class="acc-line">&nbsp;</div>
+                <a href="" id="acc-details">Personal details </a>
+                <div class="clear">&nbsp;</div>
+                <div class="acc-line">&nbsp;</div>
+                <a href="" id="acc-project">Project details</a>
+                <div class="clear">&nbsp;</div>
+                <div class="acc-line">&nbsp;</div>
+                <a href="" id="acc-inbox">Inbox</a>
+                <div class="clear">&nbsp;</div>
+                <div class="acc-line">&nbsp;</div>
+                <a href="" id="acc-stats">Statistics</a> 
+            
+          .nav
+            = render "shared/menu"
+          .clear
+      <div class="clear">
+     
+    #content-outer
+      #content
+        #page-heading
+          %h1= @title
+        
+        %table#content-table(border="0" width="100%" cellpadding="0" cellspacing="0")
+          %tr
+            %th.sized(rowspan="3")= image_tag "shared/side_shadowleft.jpg", :size => "20x300", :alt => ""
+            %th.topleft
+            %td#tbl-border-top &nbsp;
+            %th.topright
+            %th.sized(rowspan="3")= image_tag "shared/side_shadowright.jpg", :size => "20x300", :alt => ""
+          %tr
+            %td#tbl-border-left
+            %td
+              #content-table-inner
+                #table-content
+                  = render "shared/notice"
+                  = yield
+                .clear
+            %td#tbl-border-right
+          %tr
+            %th.sized.bottomleft
+            %td#tbl-border-bottom &nbsp;
+            %th.sized.bottomright
+        .clear &nbsp;
       .clear &nbsp;
     .clear &nbsp;
-  .clear &nbsp;
-      
-  #footer
-    <!-- <div id="footer-pad">&nbsp;</div> -->
-    #footer-left
-      Admin Skin &copy; Copyright Internet Dreams Ltd. <a href="">www.netdreams.co.uk</a>. All rights reserved.
-    .clear &nbsp;
-      
-</html>
+        
+    #footer
+      <!-- <div id="footer-pad">&nbsp;</div> -->
+      #footer-left
+        Admin Skin &copy; Copyright Internet Dreams Ltd. <a href="">www.netdreams.co.uk</a>. All rights reserved.
+      .clear &nbsp;

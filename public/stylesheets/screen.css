@@ -938,17 +938,15 @@ a#acc-stats  {
 
 .ui-menubar-menu {
   float: left;
-  /*height: auto;*/
   margin: 0;
   padding: 0;
 }
 
-.ui-menubar-2 {
-  display: none;
+.ui-menubar-menu span {
+  font-weight: bold;
 }
 
 .ui-menubar-menu-1 a {
-  background: url(../images/shared/nav/pro_line_0.gif);
   color: #fff;
   display: block;
   float: left;
@@ -963,173 +961,70 @@ a#acc-stats  {
   display: block;
 }
 
-.ui-menubar-selected a {
+.ui-menubar-menu-1.ui-menubar-selected a {
   background: url(../images/shared/nav/pro_line_1.gif);
   padding: 0 0 0 10px;
 }
 
-.ui-menubar-selected a span {
+.ui-menubar-menu-1.ui-menubar-selected a span {
   background: url(../images/shared/nav/pro_line_1.gif) right top;
   display: block;
   padding: 0 20px 0 10px;
 }
 
-.ui-menubar-menu a:hover, .ui-menubar-menu:hover a {
+.ui-menubar-menu-1.ui-menubar-menu a:hover, .ui-menubar-menu-1.ui-menubar-menu:hover a {
   background: url(../images/shared/nav/pro_line_1.gif);
   color: #fff;
   cursor: pointer;
   padding: 0 0 0 10px;
 }
 
-.ui-menubar-menu a:hover span, .ui-menubar-menu:hover a span {
+.ui-menubar-menu-1.ui-menubar-menu a:hover span, .ui-menubar-menu-1.ui-menubar-menu:hover a span {
   background: url(../images/shared/nav/pro_line_1.gif) right top;
   cursor: pointer;
   padding: 0 20px 0 10px;
 }
 
+.ui-menubar-2 {
+  display: none;
+}
+
+.ui-menubar-menu-1:hover .ui-menubar-2,
+.ui-menubar-menu-1 a:hover .ui-menubar-2,
+.ui-menubar-menu-1.ui-menubar-selected .ui-menubar-2 {
+  background: url(../images/shared/nav/back_0.gif);
+  display: block;
+  position: absolute;
+  top: 37px;
+  width: 750px;
+  left: 0px;
+  z-index: 100;
+}
+
+.ui-menubar-2.ui-menubar-selected {
+  z-index: 10;
+}
+
+.ui-menubar-menu-2 a {
+  background: none !important;
+}
+
+.ui-menubar-menu-2 a span{
+  background: none !important;
+  
+}
+
+.ui-menubar-menu-2 a:hover span, .ui-menubar-menu-2 a span:hover,
+.ui-menubar-menu-2.ui-menubar-selected span {
+  color: #94b52c;
+}
+  
 .nav-divider  {
   background: url(../images/shared/nav/divider.jpg) top no-repeat;
   float: left;
   height: 40px;
   width: 15px;
 }
-
-/*.nav .table  {
-  display: table;
-}*/
-
-/*.nav .select, .nav .current  {
-  display: table-cell;
-  float: left;
-  list-style: none;
-  margin: 0 0px 0 0;
-  padding: 0;
-  white-space: nowrap;
-}*/
-
-/*.nav li  {
-  float: left;
-  height: auto;
-  margin: 0;
-  padding: 0;
-}*/
-
-.nav .select a  {
-  background: url(../images/shared/nav/pro_line_0.gif);
-  color: #fff;
-  display: block;
-  float: left;
-  height: 37px;
-  line-height: 35px;
-  padding: 0 20px 0 20px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-.nav .current a  {
-  background: url(../images/shared/nav/pro_line_1.gif);
-  color: #fff;
-  display: block;
-  float: left;
-  height: 37px;
-  line-height: 35px;
-  padding: 0 0 0 10px;
-  text-decoration: none;
-  white-space: nowrap;
-}
-
-/*.nav .current a b  {
-  background: url(../images/shared/nav/pro_line_1.gif) right top;
-  display: block;
-  padding: 0 20px 0 10px;
-}*/
-
-.nav .select a:hover, .nav .select li:hover a  {
-  background: url(../images/shared/nav/pro_line_1.gif);
-  color: #fff;
-  cursor: pointer;
-  padding: 0 0 0 10px;
-}
-
-.nav .select a:hover b, .nav .select li:hover a b  {
-  background: url(../images/shared/nav/pro_line_1.gif) right top;
-  cursor: pointer;
-  display: block;
-  float: left;
-  padding: 0 20px 0 10px;
-}
-
-.nav .select_sub  {
-  display: none;
-  margin: 0 0 0 10px;
-}
-
-/* IE6 only */
-.nav table  {
-  border-collapse: collapse;
-  font-size: 1em;
-  height: 0;
-  margin: -1px;
-  width: 0;
-}
-
-.nav .sub  {
-  display: table;
-  list-style: none;
-  /* margin: 0 auto; */
-  padding: 0;
-}
-.nav .sub_active .current_sub a, 
-.nav .sub_active a:hover  {
-  background: transparent;
-  color: #fff;
-  }
-.nav .select :hover .select_sub, 
-.nav .current .show  {
-  background: url(../images/shared/nav/back_0.gif);
-   
-  display: block;
-  left: 0;
-  padding: 0;
-  position: absolute;
-  text-align: left;
-  top: 37px;
-  width: 750px;
-  z-index: 100;
-  }
-.nav .current .show  {
-  z-index: 10;
-  }
-.nav .select :hover .sub li a, 
-.nav .current .show .sub li a  {
-  background: transparent;
-  border: 0;
-  color: #fff;
-  font-weight: bold;
-  font-size: 13px;
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0 10px 0 10px;
-  white-space: nowrap;
-  }
-.nav .current .sub li.sub_show a  {
-  background: url(../images/shared/nav/menus/back_1.gif);
-  color: #94b52c;
-  cursor: default;
-  }
-.nav .select :hover .sub li a:hover, 
-.nav .current .sub li a:hover  {
-  background: url(../images/shared/nav/menus/back_1.gif);
-  color: #94b52c;
-  visibility: visible;
-  }
- 
-  
-  
- 
- 
-  
   
 /* FOOTER -------------------------------------------------------------- */
 

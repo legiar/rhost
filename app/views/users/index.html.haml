@@ -3,24 +3,23 @@
   %tr
     %th.table-header-check= link_to "", "#", :id => "toggle-all"
     %th.table-header-repeat.line-left.minwidth-1= link_to "login", "#"
-    <th class="table-header-repeat line-left minwidth-1"><a href="">First Name</a></th>
-    <th class="table-header-repeat line-left"><a href="">Email</a></th>
-    <th class="table-header-repeat line-left"><a href="">Due</a></th>
-    <th class="table-header-repeat line-left"><a href="">Website</a></th>
+    %th.table-header-repeat.line-left.minwidth-1 <a href="">First Name</a>
+    %th.table-header-repeat.line-left <a href="">Email</a>
+    %th.table-header-repeat.line-left <a href="">Due</a>
+    %th.table-header-repeat.line-left <a href="">Website</a>
     %th.table-header-repeat.line-left 
-    <th class="table-header-options line-left"><a href="">Options</a></th>
+    %th.table-header-options.line-left <a href="">Options</a>
 
   - @users.each do |user|
     %tr
       %td <input type="checkbox"/>
       %td= user.login
       %td= user.email
-      %td= user.login_count
-      %td= user.last_request_at
-      %td= user.last_login_at
-      %td= user.current_login_at
-      %td= user.last_login_ip
-      %td= user.current_login_ip
+      %td= user.sign_in_count
+      %td= user.current_sign_in_at
+      %td= user.last_sign_in_at
+      %td= user.current_sign_in_ip
+      %td= user.last_sign_in_ip
       %td.options-width
         = link_to 'Show', user, :class => "icon-1 info-tooltip"
         = link_to 'Edit', edit_user_path(user), :class => "icon-4 info-tooltip"

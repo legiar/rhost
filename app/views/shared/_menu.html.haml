@@ -1,28 +1,15 @@
 .table
   = menu_bar do |mainbar|
     - mainbar.menu :home, 'Home', dashboard_index_path do |homebar|
-      - homebar.menu :overview, 'Overview', dashboard_index_path
+      - homebar.menu :overview, 'Overview', dashboard_index_path, :match_url => "^/(dashboard/index){0,1}$"
+    - mainbar.menu :mail, 'Mail', mail_dashboard_index_path, :match_url => "^/mail" do |mailbar|
+      - mailbar.menu :overview, 'Overview', mail_dashboard_index_path
+      - mailbar.menu :domains, 'Domains', mail_domains_path, :match_url => "^/mail/domains"
+      - mailbar.menu :mailboxex, 'Mailboxes', mail_mailboxes_path, :match_url => "^/mail/mailboxes"
+      - mailbar.menu :aliases, 'Aliases', mail_aliases_path, :match_url => "^/mail/aliases"
+      - mailbar.menu :white_list, 'White list', mail_white_list_index_path, :match_url => "^/mail/white"
+      - mailbar.menu :black_list, 'Black list', mail_black_list_index_path, :match_url => "^/mail/black"
     - mainbar.menu :users, 'Users', users_path do |userbar|
       - userbar.menu :all, 'All users', users_path
       - userbar.menu :new, 'New user', new_user_path
-  
-  /%ul.current
-  /  %li
-  /    = link_to content_tag(:string, "Home"), dashboard_index_path
-  /    .select_sub.show
-  /      %ul.sub
-  /        %li.sub_show= link_to "Dashboard", dashboard_index_path
-
-  /.nav-divider &nbsp;
-              
-  /%ul.select
-  /  %li
-  /    = link_to content_tag(:string, "Users"), users_path
-  /    .select_sub
-  /      %ul.sub
-  /        %li.sub_show= link_to "All users", users_path
-  /        %li= link_to "New user", new_user_path
-
-  /.nav-divider &nbsp;
-
 .clear
