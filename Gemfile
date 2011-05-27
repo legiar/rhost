@@ -1,14 +1,19 @@
-source 'http://rubygems.org'
+source "http://rubygems.org"
 
-gem 'rails', '3.0.3'
-gem 'sqlite3-ruby', :require => 'sqlite3'
-gem 'mysql2'
-gem 'haml'
-gem 'formtastic', '~> 1.2.2'
-gem 'devise'
-gem 'cancan'
-gem 'inherited_resources', '1.1.2'
-gem 'inherited_resources_views'
+gem "rails", "3.0.7"
+gem "mysql2", "= 0.2.6"
 
-gem "mongrel"
-gem "nifty-generators"
+gem "haml"
+gem "sass"
+
+gem "devise"
+gem "cancan"
+
+gem "formtastic", "~> 1.2.3"
+
+gem "unicorn"
+gem "capistrano"
+
+group :development, :test do
+  gem 'rails-dev-boost', :git => 'git://github.com/thedarkone/rails-dev-boost.git', :require => 'rails_development_boost'
+end

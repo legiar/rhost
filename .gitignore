@@ -1,6 +1,13 @@
 .bundle
 db/*.sqlite3
 log/*.log
-tmp/**/*
-Gemfile.lock
+tmp/
+*.lock
+config/database.yml
+public/javascript/hyperadmin.js
+public/stylesheets/hyperadmin.css
+*-
 db/schema.rb
+.sass-cache
+
+
