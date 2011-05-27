@@ -1,0 +1,27 @@
+development:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: rhost_development
+  pool: 5
+  username: rhost
+  password:
+
+test:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: rhost_test
+  pool: 5
+  username: rhost
+  password:
+
+production:
+  adapter: mysql2
+  encoding: utf8
+  reconnect: false
+  database: rhost_production
+  pool: 5
+  usernmae: rhost
+  password:
+
