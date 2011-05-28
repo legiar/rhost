@@ -1,20 +1,17 @@
 RHost::Application.routes.draw do
-  namespace :mail do
-    resources :domains
-    resources :mailboxes
-    resources :aliases
-    resources :white_list
-    resources :black_list
+  #devise_for :accounts
 
-    get "dashboard/index"
-  end
+  #namespace :mail do
+  #  resources :domains
+  #  resources :mailboxes
+  #  resources :aliases
+  #  resources :white_list
+  #  resources :black_list
 
-  devise_for :users,
-    :path_names => { :sign_in => 'login', :sign_out => 'logout', :password => 'secret', :confirmation => 'verification', :unlock => 'unblock', :registration => 'register', :sign_up => 'cmon_let_me_in' } do
-    get "/login" => "devise/sessions#new"
-    get "/logout" => "devise/sessions#destroy"
-  end
+  #  get "dashboard/index"
+  #end
 
+  devise_for :users
   resources :users
 
   get "dashboard/index"

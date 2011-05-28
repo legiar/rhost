@@ -1,0 +1,101 @@
+html, body  {
+  height: 100%;
+}
+
+body  {
+  background: #fff;
+}
+
+#header {
+  height: 56px;
+  position: relative;
+  
+  /*div {
+    float: left;
+  }*/
+  
+  .center {
+    margin-left: 195px;
+    height: 56px;
+    background: #000 url(../images/top/top_left_bg.jpg) left top no-repeat;
+  }
+  
+  .logo {
+    height: 56px;
+    float: left;
+    &.image {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+    }
+  }
+}
+
+#container {
+  position: relative;
+  height: 100%;
+}
+
+#sidebar {
+  float: left;
+  width: 195px;
+  height: 100%;
+  background: #000 url(../images/top/menu_bg.jpg) left top repeat-y;
+  
+  color: #fff;
+  
+  .menu {
+    li {
+      height: 35px;
+      background: transparent url(../images/top/menu_separator.jpg) left bottom no-repeat;
+      
+      &.header {
+        height: 53px;
+        background: #000 url(../images/top/menu_top.jpg) left top no-repeat;
+      }
+      
+      &.logout {
+        padding-top: 20px;
+        background: transparent;
+      }
+    }
+  }
+}
+
+#page {
+  padding-left: 195px;
+  
+  .menu {
+    position: relative;
+    height: 95px;
+    background: transparent url(../images/top/middle_bg.jpg) left bottom repeat-x;
+    padding-left: 30px;
+    
+    ul {
+      padding-top: 17px;
+      
+      li {
+        margin: 0px;
+        display: block;
+        float: left;
+        height: 61px;
+        padding-right: 30px;
+        a {
+          display: block;
+        }
+      }
+    }
+    
+    .logo.image {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      width: 73px;
+      height: 95px;
+    }
+  }
+  
+  .content {
+    position: relative;
+  }
+}

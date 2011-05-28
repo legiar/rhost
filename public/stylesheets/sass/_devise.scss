@@ -1,0 +1,55 @@
+/* _devise.scss */
+
+body.login {
+  #wrapper {
+    margin: 0px auto;
+    width: 450px;
+    height: 100%;
+    position: relative;
+  }
+  
+  #content {
+    width: 450px;
+    border: solid 1px #ccc;
+    
+    position: absolute;
+    top:50%;
+    height: 200px;
+    margin-top: -100px;
+  }
+  
+  .header {
+    height: 70px;
+    background: url(../images/login/login_top.jpg) left top no-repeat;
+  }
+  
+  form {
+    float: right;
+    width: 300px;
+  }
+  
+  .links {
+    float: left;
+    width: 140px;
+    &.lock {
+      text-align: center;
+      a {
+        text-align: center;
+        font-size: 70%;
+        display: block;
+        height: 30px;
+        background: url(../images/login/login_lock.jpg) center top no-repeat;
+        padding-top: 80px;
+      }
+    }
+  }
+
+  /* Forms */
+  abbr {
+    display: none;
+  }
+  
+  .inline-errors, .inline-errors-left {
+    display: none;
+  }
+}

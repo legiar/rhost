@@ -1,0 +1,19 @@
+!!! XML
+!!! Strict
+%html
+
+  %head
+    %meta(http-equiv="Content-Type" content="text/html; charset=UTF-8")
+    %title RHost
+    = stylesheet_link_tag 'rhost'
+    = javascript_include_tag :all
+    = csrf_meta_tag
+
+  %body.login
+    #wrapper
+      #content
+        .inner
+          .header
+          = yield
+          .footer
+          .links

@@ -4,8 +4,8 @@ log/*.log
 tmp/
 *.lock
 config/database.yml
-public/javascript/hyperadmin.js
-public/stylesheets/hyperadmin.css
+public/javascript/rhost.js
+public/stylesheets/rhost.css
 *-
 db/schema.rb
 .sass-cache

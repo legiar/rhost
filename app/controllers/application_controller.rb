@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-  #helper :all
   protect_from_forgery
   before_filter :authenticate_user!
   
@@ -8,6 +7,6 @@ class ApplicationController < ActionController::Base
   private
     
     def get_layout
-      controller_name == "sessions" ? "login" : "application"
+      devise_controller? ? "devise" : "application"
     end    
 end

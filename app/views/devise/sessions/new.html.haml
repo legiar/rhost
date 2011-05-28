@@ -1,40 +1,11 @@
-#loginbox
-  #login-inner
-    = form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|
-      %table(border="0" cellpadding="0" cellspacing="0")
-        - if resource.errors.any?
-          %tr
-            %th
-            %td Wrong username or password.
-        %tr
-          %th Username
-          %td= f.text_field :login, :class => "login-inp"
-        %tr
-          %th Password
-          %td= f.password_field :password, :class => "login-inp", :onfocus => "this.value=''"
-        - if devise_mapping.rememberable?
-          %tr
-            %th
-            %td(valign="top")
-              = f.check_box :remember_me, :class => "checkbox-size"
-              = f.label :remember_me
-        %tr
-          %th
-          %td= f.submit "Login", :class => "submit-login"
-  .clear
-  = link_to "Forgot Password?", "#", :class => "forgot-pwd"
+.notice= flash[:alert]
+= semantic_form_for resource, :as => resource_name, :url => session_path(resource_name) do |f|
+  = f.input :name
+  = f.input :password
+  - if devise_mapping.rememberable?
+    = f.input :remember_me, :as => :boolean
+  = f.commit_button :label => "Login"
+ 
+.links.lock
+  = link_to "Lost password?", new_password_path(resource_name)
     
-#forgotbox
-  #forgotbox-text Please send us your email and we'll reset your password.
-  #forgot-inner
-    %table(border="0" cellpadding="0" cellspacing="0")
-      %tr
-        %th Email address:
-        %td
-          <input type="text" value=""   class="login-inp" />
-      %tr
-        %th
-        %td
-          <input type="button" class="submit-login"  />
-  .clear
-  = link_to "Back to login", "#", :class => "back-login"
